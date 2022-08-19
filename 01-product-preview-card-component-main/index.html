@@ -17,35 +17,37 @@
     <title>Frontend Mentor | Product preview card component</title>
   </head>
   <body>
-    <div class="main-container">
-      <div class="image-container">
-        <picture>
-          <source
-            media="(max-width: 799px)"
-            srcset="images/image-product-mobile.jpg"
-          />
-          <source
-            media="(min-width: 800px)"
-            srcset="images/image-product-desktop.jpg"
-          />
-          <img
-            src="images/image-product-desktop.jpg"
-            alt="Gabrielle Essence Eau De Parfum"
-          />
-        </picture>
-      </div>
-      <div class="content-container">
-        <p class="content-header grey-text">Perfume</p>
-        <h2 class="content-title">Gabrielle Essence Eau De Parfum</h2>
-        <p class="grey-text">
-          A floral, solar and voluptuous interpretation composed by Olivier
-          Polge, Perfumer-Creator for the House of CHANEL.
-        </p>
-        <p>
-          <span class="retail-price">$149.99</span>
-          <span class="marked-price grey-text">$169.99</span>
-        </p>
-        <button class="cart-btn">Add to Cart</button>
+    <div class="outer-container">
+      <div class="main-container">
+        <div class="image-container">
+          <picture class="fill">
+            <source
+              media="(max-width: 799px)"
+              srcset="images/image-product-mobile.jpg"
+            />
+            <source
+              media="(min-width: 800px)"
+              srcset="images/image-product-desktop.jpg"
+            />
+            <img
+              src="images/image-product-desktop.jpg"
+              alt="Gabrielle Essence Eau De Parfum"
+            />
+          </picture>
+        </div>
+        <div class="content-container">
+          <p class="content-header grey-text">Perfume</p>
+          <h2 class="content-title">Gabrielle Essence Eau De Parfum</h2>
+          <p class="grey-text">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <p>
+            <span class="retail-price">$149.99</span>
+            <span class="marked-price grey-text">$169.99</span>
+          </p>
+          <button class="cart-btn">Add to Cart</button>
+        </div>
       </div>
     </div>
 
