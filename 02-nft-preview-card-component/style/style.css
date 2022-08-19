@@ -108,6 +108,8 @@ button > img {
 
 .author > img {
   margin-right: 1em;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
 }
 
 /* ****** FOOTER STYLING ****** */
