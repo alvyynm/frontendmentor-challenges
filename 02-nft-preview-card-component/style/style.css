@@ -16,6 +16,100 @@ body {
   font-size: 18px;
 }
 
+/* ****** CARD STYLING ****** */
+
+main {
+  background-color: hsl(217, 54%, 11%);
+}
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(217, 54%, 11%);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(216, 50%, 16%);
+  width: 330px;
+  height: 550px;
+  border-radius: 10px;
+}
+
+.image-container > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.image-container,
+.content-container {
+  width: 90%;
+  height: 50%;
+  padding: 1rem;
+  color: hsl(215, 51%, 70%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+.content-container > p {
+  font-size: 1rem;
+  margin-bottom: 1.3em;
+  line-height: 1.5;
+}
+
+.offer-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.3em;
+}
+
+.price {
+  color: hsl(178, 100%, 50%);
+}
+
+.period {
+  color: hsl(215, 51%, 70%);
+}
+
+.offer-detail > button {
+  background-color: inherit;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+button > img {
+  vertical-align: sub;
+  margin-right: 0.2em;
+}
+
+.author > img {
+  width: 39px;
+  height: 39px;
+}
+
+.white-text {
+  color: hsl(0, 0%, 100%);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author > img {
+  margin-right: 1em;
+}
+
 /* ****** FOOTER STYLING ****** */
 
 .attribution {
