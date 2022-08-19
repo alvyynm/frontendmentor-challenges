@@ -36,8 +36,8 @@ body {
 
 .main-container {
   display: flex;
-  width: 40%;
-  height: 55%;
+  width: 600px;
+  height: 450px;
 }
 
 .image-container {
@@ -56,4 +56,94 @@ img {
   width: 50%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.content-container > .content-header {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-top: 0;
+}
+
+h2 {
+  color: hsl(212, 21%, 14%);
+  font-family: "Fraunces", serif;
+  font-size: 2.1875rem;
+  line-height: 1;
+  margin: 0.25em 0;
+}
+
+p {
+  font-size: 0.875rem;
+  margin: 0.6em 0;
+  line-height: 1.6;
+}
+
+p > .retail-price {
+  color: hsl(158, 36%, 37%);
+  font-family: "Fraunces", serif;
+  font-size: 2.1875rem;
+  margin-right: 0.5em;
+}
+
+p > .marked-price {
+  vertical-align: super;
+  text-decoration: line-through;
+}
+
+.cart-btn {
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  width: 100%;
+  padding: 0.9375rem 0;
+  border-radius: 5px;
+}
+
+.cart-btn:hover {
+  background-color: hsl(156, 42%, 18%);
+}
+
+.cart-btn > img {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.625em;
+  vertical-align: text-bottom;
+}
+
+.grey-text {
+  color: hsl(228, 12%, 48%);
+}
+
+/* ****** MOBILE DESIGN ****** */
+
+@media (max-width: 600px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-container,
+  .content-container {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  img {
+    border-radius: 10px 10px 0 0;
+  }
+  .content-container {
+    border-radius: 0 0 10px 10px;
+  }
 }
