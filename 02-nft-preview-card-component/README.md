@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [NFT preview card component challenge on GitHub](https://github.com/alvyynm/frontendmentor-challenges/tree/main/02-nft-preview-card-component)
+- Live Site URL: [Add live site URL here](https://alvyynm.github.io/nft-component-design/)
 
 ## My process
 
