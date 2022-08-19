@@ -92,6 +92,12 @@ button > img {
   margin-right: 0.2em;
 }
 
+hr {
+  background-color: hsl(215, 32%, 27%);
+  height: 1px;
+  margin-bottom: 1.3em;
+}
+
 .author > img {
   width: 39px;
   height: 39px;
