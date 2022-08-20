@@ -51,11 +51,17 @@ Users should be able to:
 
 My main takeaway from this project was the importance of mobile-first workflow. It helped me save time. Since the design is identical on mobile and desktop, all I had to do was design the mobile site, and voila!
 
+The second takeaway is how to use overlay effects
+
 ### Continued development
+
+Here are the main areas I plan to improve on:
 
 - Mobile-first workflow
 - Planning for the structure ahead of time
 - Aligning images inside a div without overflow
+- Using overlay effects
+- Z-index
 
 ## Author
 
