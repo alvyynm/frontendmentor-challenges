@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [GitHub code](https://github.com/alvyynm/frontendmentor-challenges/tree/main/04-order-summary-component)
 - Live Site URL: [Order Summary Component](https://alvyynm.github.io/Order-summary-component/)
 
 ## My process
