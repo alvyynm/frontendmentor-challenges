@@ -7,6 +7,13 @@ const ratingBtns = document.querySelectorAll(".rating-btn");
 const userScore = document.querySelector(".user-rating");
 const ratingMessage = document.querySelector(".rating-score");
 
+ratingBtns.forEach((btn) => {
+  let value = btn.getAttribute("value");
+  btn.addEventListener("click", function () {
+    userScore.textContent = value;
+  });
+});
+
 const showThankYou = function () {
   ratingCard.classList.add("hidden");
   thankYouCard.classList.remove("hidden");
