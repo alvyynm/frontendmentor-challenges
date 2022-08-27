@@ -140,7 +140,7 @@ h3 {
 }
 
 /* Large screens */
-@media (min-width: 1025px) {
+@media (min-width: 1000px) {
   .content-container {
     width: 600px;
     padding: 3rem;
