@@ -21,8 +21,28 @@
       <!-- <div class="parent-container"> -->
       <div class="card-container">
         <div class="image-container">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="./images/illustration-woman-online-mobile.svg"
+            />
+            <source
+              media="(min-width: 769px)"
+              srcset="./images/illustration-woman-online-desktop.svg"
+            />
+            <source
+              media="(min-width: 769px)"
+              srcset="./images/illustration-box-desktop.svg"
+            />
+            <img
+              src="./images/illustration-woman-online-mobile.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </picture>
           <img
-            src="./images/illustration-woman-online-mobile.svg"
+            class="desktop-box-icon"
+            src="/images/illustration-box-desktop.svg"
             alt=""
             aria-hidden="true"
           />
