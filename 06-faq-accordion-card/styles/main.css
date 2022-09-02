@@ -107,9 +107,9 @@ h3:hover {
   display: none;
 }
 
-/* .accordion-item > .special {
-  display: block;
-} */
+.rotate-icon {
+  transform: rotate(180deg);
+}
 
 /* FOOTER  */
 .attribution {

@@ -9,5 +9,6 @@ for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function () {
     answers[i].classList.remove("hidden");
     btnQuestion[i].classList.add("active");
+    accordionIcon[i].classList.add("rotate-icon");
   });
 }
