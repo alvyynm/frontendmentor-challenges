@@ -22,6 +22,8 @@ body {
   font-weight: 400;
   background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   background-repeat: no-repeat;
+  /* prevent illustration from overflowing */
+  margin-top: 100px;
   /* display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,15 +33,15 @@ body {
 
 /* ****** BODY ****** */
 
-.parent-container {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 130vh;
+  min-height: 100vh;
 }
 
 .card-container {
-  width: 350px;
+  width: 35rem;
   height: fit-content;
   padding: 2rem;
   border-radius: 1.4rem;
@@ -109,13 +111,4 @@ h3:hover {
 
 .rotate-icon {
   transform: rotate(180deg);
-}
-
-/* FOOTER  */
-.attribution {
-  font-size: 1.1rem;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(0, 0%, 100%);
 }
