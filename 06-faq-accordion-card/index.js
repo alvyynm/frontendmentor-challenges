@@ -16,5 +16,18 @@ for (let i = 0; i < btns.length; i++) {
       btnQuestion[i].classList.remove("active");
       accordionIcon[i].classList.remove("rotate-icon");
     }
+    findClickedBtn(i);
   });
+}
+
+function findClickedBtn(x) {
+  //here x takes the value of which button was clicked by user
+  for (let i = 0; i < btns.length; i++) {
+    if (i != x) {
+      //do this for all non-clicked button by the user
+      answers[i].classList.add("hidden");
+      btnQuestion[i].classList.remove("active");
+      accordionIcon[i].classList.remove("rotate-icon");
+    }
+  }
 }
