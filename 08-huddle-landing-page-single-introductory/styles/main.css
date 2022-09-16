@@ -1,0 +1,72 @@
+:root {
+  --color-primary: hsl(257, 40%, 49%);
+  --color-secondary: hsl(300, 69%, 71%);
+  --color-neutral: hsl(0, 0%, 100%);
+
+  --ff-primary: "Open Sans", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: "Poppins", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 600;
+
+  --fs-text: 1rem;
+  --fs-heading: 1.5rem;
+}
+/* ****** GOOGLE FONTS ****** */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* body */
+body {
+  font-family: var(--ff-body);
+  font-size: 18px;
+}
