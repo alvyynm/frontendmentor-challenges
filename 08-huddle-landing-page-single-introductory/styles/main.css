@@ -74,7 +74,7 @@ body {
   background-repeat: no-repeat;
 }
 
-header > img {
+header > a > img {
   width: 10rem;
 }
 
@@ -145,7 +145,7 @@ section > button:hover {
     background-image: url(/images/bg-desktop.svg);
   }
 
-  header > img {
+  header > a > img {
     width: 10rem;
   }
 
