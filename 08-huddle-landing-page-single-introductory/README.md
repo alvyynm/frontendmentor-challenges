@@ -12,7 +12,6 @@ This is a solution to the [Huddle landing page with single introductory section 
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 
 ## Overview
 
@@ -25,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Website screenshot](./images/desktop-screenshot.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub link](https://github.com/alvyynm/frontendmentor-challenges/tree/main/08-huddle-landing-page-single-introductory)
+- Live Site URL: [Website link](https://alvyynm.github.io/huddle-landing-page/)
 
 ## My process
 
@@ -46,7 +45,6 @@ Users should be able to:
 
 ### Continued development
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- Using CSS variables and utility classes
+- Responsive design
+- Semantic HTML markup
