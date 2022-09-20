@@ -1,0 +1,81 @@
+:root {
+  --color-primary: hsl(0, 0%, 98%);
+  --color-secondary: hsl(0, 0%, 8%);
+  --color-neutral: hsl(0, 0%, 41%);
+
+  --ff-primary: "Epilogue", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --fs-text: 1.125rem;
+  --fs-heading: 1.8rem;
+
+  --color-text: var(--color-neutral);
+  --color-heading: var(--color-secondary);
+
+  --bg-color: var(--color-primary);
+}
+/* ****** GOOGLE FONTS ****** */
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Body */
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-text);
+  background-color: var(--bg-color);
+  padding: 2rem;
+}
+
+.dropdown-menu {
+  display: none;
+}
