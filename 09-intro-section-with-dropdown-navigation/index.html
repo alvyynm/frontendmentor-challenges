@@ -18,94 +18,127 @@
   </head>
 
   <body>
-    <nav>
-      <div class="navbar-left">
+    <header class="header">
+      <div class="nav-wrapper">
         <div class="navbar-brand">
           <a class="navbar-brand" href="#"
             ><img src="./images/logo.svg" alt="Snap logo"
           /></a>
         </div>
-        <!-- start -->
-        <div class="nav-links">
-          <div class="navbar-left">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Features
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      ><img src="./images/icon-todo.svg" alt="" class="mx-3" />
-                      Todo List</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <img
-                        src="./images/icon-calendar.svg"
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      Calender</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      ><img src="./images/icon-reminders.svg" alt="" />
-                      Reminders</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      ><img src="./images/icon-planning.svg" alt="" />
-                      Planning</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Company
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">History</a></li>
-                  <li><a class="dropdown-item" href="#">Our team</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Blog</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Careers</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <img
+            class="icon-hamburger"
+            src="./images/icon-menu.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="icon-close"
+            src="./images/icon-close-menu.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <nav class="primary-navigation">
+          <!-- start -->
+          <div class="nav-links">
+            <div class="navbar-left">
+              <ul class="nav-list" role="list">
+                <li class="nav-item">
+                  <a
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Features
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="./images/icon-todo.svg"
+                          alt=""
+                          class="mx-3"
+                        />
+                        Todo List</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <img
+                          src="./images/icon-calendar.svg"
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        Calender</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img src="./images/icon-reminders.svg" alt="" />
+                        Reminders</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><img src="./images/icon-planning.svg" alt="" />
+                        Planning</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Company
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">History</a></li>
+                    <li><a class="dropdown-item" href="#">Our team</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Blog</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+              </ul>
+            </div>
+            <div class="navbar-right">
+              <button type="button" class="nav-button">Login</button>
+              <button class="nav-button" type="button">Register</button>
+            </div>
           </div>
-        </div>
+        </nav>
       </div>
-      <div class="navbar-right">
-        <button type="button" class="btn btn-link">Login</button>
-        <button class="btn btn-light" type="button">Register</button>
-      </div>
-    </nav>
+    </header>
 
     <main>
       <section class="hero-section">
+        <div class="hero-img">
+          <picture>
+            <source
+              media="(min-width: 50em)"
+              srcset="./images/image-hero-desktop.png"
+            />
+            <img src="./images/image-hero-mobile.png" alt="" />
+          </picture>
+        </div>
         <div class="hero-content">
           <h2>Make <span class="lower-text">remote work</span></h2>
           <p class="hero-text">
@@ -114,8 +147,14 @@
           </p>
           <button type="button" class="btn">Learn more</button>
         </div>
-        <div class="logos"></div>
+        <div class="logos">
+          <img src="./images/client-databiz.svg" alt="Databiz logo" />
+          <img src="./images/client-audiophile.svg" alt="Audiophile logo" />
+          <img src="./images/client-meet.svg" alt="Meet logo" />
+          <img src="./images/client-maker.svg" alt="Maker logo" />
+        </div>
       </section>
+      <footer>&copy; 2022 Snap.</footer>
     </main>
   </body>
 </html>
