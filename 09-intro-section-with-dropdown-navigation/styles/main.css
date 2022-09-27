@@ -98,11 +98,11 @@ body {
 .primary-navigation {
   padding-top: 6rem;
   display: none;
-  inset: 0 0 2rem 10rem;
+  inset: 0 0 2rem 50%;
   width: 60%;
   background-color: var(--color-primary);
   min-height: 100vh;
-  box-shadow: -130px 1px 5px 200px rgba(0, 0, 0, 0.24);
+  box-shadow: -230px 1px 5px 200px rgba(0, 0, 0, 0.24);
 }
 
 .nav-list {
