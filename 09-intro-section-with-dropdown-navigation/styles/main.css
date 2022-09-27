@@ -246,7 +246,6 @@ button[data-bs-toggle] > img {
 .hero-img {
   margin-bottom: 1.5rem;
   min-height: 100%;
-  border: 1px solid red;
   max-width: 100%;
 }
 
