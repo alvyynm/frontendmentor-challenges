@@ -15,6 +15,7 @@
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./js/script.js" defer></script>
   </head>
 
   <body>
@@ -38,7 +39,7 @@
               aria-hidden="true"
             />
             <img
-              class="icon-close"
+              class="icon-close hidden"
               src="./images/icon-close-menu.svg"
               alt=""
               aria-hidden="true"
@@ -50,66 +51,70 @@
             <div class="nav-links">
               <div class="navbar-left">
                 <ul class="nav-list" role="list">
-                  <li class="nav-item">
+                  <li class="nav-item dropdown dropdown-parent">
                     <button
-                      class="nav-link"
+                      class="nav-link menu-dropdown-toggle"
                       href="#"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Features <img src="./images/icon-arrow-down.svg" alt="" />
                     </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img
-                            src="./images/icon-todo.svg"
-                            alt=""
-                            class="mx-3"
-                          />
-                          Todo List</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img
-                            src="./images/icon-calendar.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          Calender</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img src="./images/icon-reminders.svg" alt="" />
-                          Reminders</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img src="./images/icon-planning.svg" alt="" />
-                          Planning</a
-                        >
-                      </li>
-                    </ul>
+                    <div class="dropdown-content">
+                      <ul class="dropdown-menu menu-first">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img
+                              src="./images/icon-todo.svg"
+                              alt=""
+                              class="mx-3"
+                            />
+                            Todo List</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            <img
+                              src="./images/icon-calendar.svg"
+                              alt=""
+                              aria-hidden="true"
+                            />
+                            Calender</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img src="./images/icon-reminders.svg" alt="" />
+                            Reminders</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img src="./images/icon-planning.svg" alt="" />
+                            Planning</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown dropdown-parent">
                     <button
-                      class="nav-link dropdown-toggle"
+                      class="nav-link menu-dropdown-toggle"
                       href="#"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
                       Company <img src="./images/icon-arrow-down.svg" alt="" />
                     </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">History</a></li>
-                      <li><a class="dropdown-item" href="#">Our team</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Blog</a>
-                      </li>
-                    </ul>
+                    <div class="dropdown-content">
+                      <ul class="dropdown-menu menu-second">
+                        <li><a class="dropdown-item" href="#">History</a></li>
+                        <li><a class="dropdown-item" href="#">Our team</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Blog</a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Careers</a>
@@ -123,7 +128,7 @@
                 <button type="button" class="nav-button btn-no-border button">
                   Login
                 </button>
-                <button class="nav-button button" type="button">
+                <button class="nav-button button register-button" type="button">
                   Register
                 </button>
               </div>
@@ -141,7 +146,7 @@
               <div class="hero-img">
                 <picture>
                   <source
-                    media="(min-width: 50em)"
+                    media="(min-width: 57em)"
                     srcset="./images/image-hero-desktop.png"
                   />
                   <img src="./images/image-hero-mobile.png" alt="" />
