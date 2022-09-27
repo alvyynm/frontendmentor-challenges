@@ -17,8 +17,8 @@ navToggle.addEventListener("click", function () {
   closeBtn.classList.toggle("hidden");
 });
 
-menuNavToggle.forEach((toggle) => {
-  toggle.addEventListener("click", function () {
-    console.log(`Clicked!`);
-  });
-});
+// menuNavToggle.forEach((toggle) => {
+//   toggle.addEventListener("click", function () {
+//     toggle.classList.toggle("reveal");
+//   });
+// });

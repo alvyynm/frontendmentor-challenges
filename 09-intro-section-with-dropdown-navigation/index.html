@@ -51,7 +51,7 @@
             <div class="nav-links">
               <div class="navbar-left">
                 <ul class="nav-list" role="list">
-                  <li class="nav-item">
+                  <li class="nav-item dropdown dropdown-parent">
                     <button
                       class="nav-link menu-dropdown-toggle"
                       href="#"
@@ -60,42 +60,44 @@
                     >
                       Features <img src="./images/icon-arrow-down.svg" alt="" />
                     </button>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img
-                            src="./images/icon-todo.svg"
-                            alt=""
-                            class="mx-3"
-                          />
-                          Todo List</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img
-                            src="./images/icon-calendar.svg"
-                            alt=""
-                            aria-hidden="true"
-                          />
-                          Calender</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img src="./images/icon-reminders.svg" alt="" />
-                          Reminders</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#"
-                          ><img src="./images/icon-planning.svg" alt="" />
-                          Planning</a
-                        >
-                      </li>
-                    </ul>
+                    <div class="dropdown-content">
+                      <ul class="dropdown-menu menu-first">
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img
+                              src="./images/icon-todo.svg"
+                              alt=""
+                              class="mx-3"
+                            />
+                            Todo List</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            <img
+                              src="./images/icon-calendar.svg"
+                              alt=""
+                              aria-hidden="true"
+                            />
+                            Calender</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img src="./images/icon-reminders.svg" alt="" />
+                            Reminders</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            ><img src="./images/icon-planning.svg" alt="" />
+                            Planning</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </li>
-                  <li class="nav-item dropdown">
+                  <li class="nav-item dropdown dropdown-parent">
                     <button
                       class="nav-link menu-dropdown-toggle"
                       href="#"
@@ -104,13 +106,15 @@
                     >
                       Company <img src="./images/icon-arrow-down.svg" alt="" />
                     </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">History</a></li>
-                      <li><a class="dropdown-item" href="#">Our team</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Blog</a>
-                      </li>
-                    </ul>
+                    <div class="dropdown-content">
+                      <ul class="dropdown-menu menu-second">
+                        <li><a class="dropdown-item" href="#">History</a></li>
+                        <li><a class="dropdown-item" href="#">Our team</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Blog</a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Careers</a>
