@@ -189,12 +189,12 @@ section > button:active {
   h1,
   p {
     padding: 0;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
 
   h1 {
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
   }
 
