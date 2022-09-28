@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/alvyynm/frontendmentor-challenges/tree/main/09-intro-section-with-dropdown-navigation)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [On GitHub pages](https://alvyynm.github.io/snap-website/)
 
 ## My process
 
