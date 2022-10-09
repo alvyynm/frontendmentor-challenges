@@ -123,3 +123,27 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/* MEDIA QUERIES */
+@media (min-width: 550px) {
+  .card {
+    padding: 2rem;
+    margin: 1.5rem;
+    max-width: 500px;
+  }
+  .card__content {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .card__content__title {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+  }
+
+  .card__content__text {
+    font-size: 1.3rem;
+  }
+}
