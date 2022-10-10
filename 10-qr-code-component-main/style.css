@@ -91,7 +91,7 @@ body {
 .card {
   padding: 1rem;
   margin: 1rem;
-  background-color: var(--color-grey-light);
+  background-color: var(--color-white);
   border-radius: 0.8rem;
 }
 
