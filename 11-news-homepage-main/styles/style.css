@@ -2,7 +2,7 @@
   --color-primary: hsl(36, 100%, 99%);
   --color-secondary-dark: hsl(240, 100%, 5%);
   --color-secondary-light: hsl(236, 13%, 42%);
-  ---color-secondary-gray: hsl(233, 8%, 79%);
+  --color-secondary-gray: hsl(233, 8%, 79%);
   --color-neutral: hsl(0, 0%, 41%);
   --color-orange: hsl(35, 77%, 62%);
   --color-red: hsl(5, 85%, 63%);
@@ -33,19 +33,26 @@
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
   padding: 0;
   font: inherit;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--color-primary);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-light);
 }
+
 img,
 picture,
 video,
@@ -64,7 +71,136 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* UTILITIES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.nav-links a {
+  color: var(--color-neutral);
+}
+
+.nav-links a:hover {
+  color: var(--color-secondary-dark);
+}
+
+/* LOGO */
+.logo > img {
+  width: 52px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+.categories {
+  position: relative;
+}
+
+.dropdown {
+  background-color: var(--color-primary);
+  padding: 1em 0;
+  position: absolute;
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+  right: 40px;
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown a:hover {
+  color: var(--color-secondary-dark);
+}
+
+.categories:hover .dropdown {
+  display: block;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type="checkbox"] {
+  display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size: 50px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: var(--color-primary);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    top: 50px;
+    right: 0;
+  }
 }
