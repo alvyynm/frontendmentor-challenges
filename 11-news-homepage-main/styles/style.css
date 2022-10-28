@@ -1,0 +1,70 @@
+:root {
+  --color-primary: hsl(36, 100%, 99%);
+  --color-secondary-dark: hsl(240, 100%, 5%);
+  --color-secondary-light: hsl(236, 13%, 42%);
+  ---color-secondary-gray: hsl(233, 8%, 79%);
+  --color-neutral: hsl(0, 0%, 41%);
+  --color-orange: hsl(35, 77%, 62%);
+  --color-red: hsl(5, 85%, 63%);
+
+  --ff-primary: "Inter", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-light: 400;
+  --fw-regular: 700;
+  --fw-bold: 700;
+
+  --fs-text: 0.9375rem;
+  --fs-heading-small: 2.5rem;
+  --fs-heading-large: 4.5rem;
+}
+
+/* ****** GOOGLE FONTS ****** */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
