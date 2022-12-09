@@ -17,10 +17,10 @@ export default function CountryInfo({ countryName }) {
   }, [countryName]);
 
   if (countryDetails.length === 0) {
-    return <div>Loading data...</div>;
+    return <div className="font-primary">Loading data...</div>;
   }
   return (
-    <div>
+    <div className="font-primary">
       <div>
         <img
           src={countryDetails.flags.png}

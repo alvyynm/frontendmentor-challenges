@@ -41,7 +41,7 @@ function CountryList({
   });
 
   return (
-    <div className="bg-slate-200">
+    <div className="bg-slate-200 font-primary">
       <h2 className="text-2xl font-bold">Country data</h2>
 
       <h3>Filter Countries</h3>
