@@ -107,7 +107,9 @@ export default function CountryInfo({ countryName }) {
                 </p>
                 <p>
                   <span className="font-semibold">Currencies: </span>
-                  {currencies.map((value) => value.name).join(" , ")}
+                  {currencies === "undefined"
+                    ? "Null"
+                    : currencies.map((value) => value.name).join(" , ")}
                 </p>
                 <p>
                   <span className="font-semibold">Languages: </span>
