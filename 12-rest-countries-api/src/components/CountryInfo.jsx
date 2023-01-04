@@ -64,7 +64,7 @@ export default function CountryInfo({ countryName }) {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <img
-              className="h-full"
+              className="h-full w-[500px]"
               src={countryDetails.flags.png}
               alt={`${countryDetails.name.common}'s official flag`}
             />
