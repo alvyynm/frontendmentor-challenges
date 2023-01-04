@@ -3,3 +3,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Directives for theme change */
+.light {
+  @apply bg-white text-light-text;
+}
+
+.dark {
+  @apply bg-dark-background text-dark-text;
+}
+
+.darkels {
+  @apply bg-dark-elements text-white;
+}
+
+.lightels {
+  @apply bg-light-elements text-light-text;
+}

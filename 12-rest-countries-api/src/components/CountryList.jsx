@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../contexts/DarkModeContext";
 
 function CountryList({
   countries,
@@ -11,13 +13,14 @@ function CountryList({
 }) {
   const [error, setError] = useState(null);
   const [region, setRegion] = useState("");
+  const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
       .then((response) => {
         setCountries(response.data);
-        console.log(countries);
+        // console.log(countries);
       })
       .catch((error) => {
         console.log(error.message);
@@ -32,7 +35,7 @@ function CountryList({
 
   // Filter results based on user input
   const filterByCountry = countries.filter((country) => {
-    console.log(country);
+    // console.log(country);
     return searchTerm.toLowerCase() === ""
       ? country
       : country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
@@ -46,15 +49,14 @@ function CountryList({
   });
 
   return (
-    <div className="bg-light-background font-primary">
-      <nav className="flex items-center justify-between w-11/12 mx-auto py-6 bg-light-background">
-        <h2 className="text-2xl font-bold">Where in the world?</h2>
-        <button>Dark Mode</button>
-      </nav>
-
-      <div className="py-6 bg-light-background">
+    <div
+      className={`font-primary max-w-[1450px] mx-auto ${
+        isLightTheme ? "lightels" : "darkels"
+      }`}
+    >
+      <div className={`py-6 ${isLightTheme ? "light" : "dark"}`}>
         <ul className="flex flex-col gap-5 md:flex-row justify-between w-11/12 mx-auto">
-          <li className="w-[30rem]">
+          <li className="w-full lg:w-[30rem]">
             <form onSubmit={handleSubmit} className="flex items-center ">
               <label htmlFor="simple-search" className="sr-only">
                 Search
@@ -80,7 +82,7 @@ function CountryList({
                   onChange={(e) => setSearchTerm(e.target.value)}
                   type="text"
                   id="simple-search"
-                  className="bg-light-elements border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-light-elements border border-gray-300 drop-shadow text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search for a country..."
                   required
                 />
@@ -92,7 +94,9 @@ function CountryList({
             <button
               id="dropdownDefault"
               data-dropdown-toggle="dropdown"
-              className="bg-light-elements w-[200px]  text-light-text focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-9 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className={`w-[200px] drop-shadow focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-9 py-2.5 text-center inline-flex items-center ${
+                isLightTheme ? "lightels" : "darkels"
+              }`}
               type="button"
             >
               Filter by Region{" "}
@@ -187,19 +191,24 @@ function CountryList({
         </ul>
 
         {error ? (
-          <div className="flex w-11/12 mx-auto pt-6">
+          <div
+            className={`flex w-11/12 mx-auto pt-6 ${
+              isLightTheme ? "light" : "dark"
+            }`}
+          >
             There's was an issue while loading your request
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 md:gap-2 w-11/12 mx-auto pt-6">
+          <div className="grid grid-cols-1 auto-rows-auto gap-5 md:grid-cols-2 lg:grid-cols-4 md:gap-x-6 md:gap-y-8 w-11/12 mx-auto pt-6">
             {searchTerm
               ? filterByCountry.map((country, i) => {
                   return (
-                    <Link to={`/country/${i}`}>
+                    <Link key={uuidv4()} to={`/country/${i}`}>
                       {" "}
                       <div
-                        key={i}
-                        className="card rounded-xl overflow-hidden w-[300px] h-[380px] bg-white shadow-xl mx-auto"
+                        className={`card rounded-xl overflow-hidden w-[300px] h-[380px] shadow-xl mx-auto ${
+                          isLightTheme ? "lightels" : "darkels"
+                        }`}
                         onClick={() => {
                           setGetCountryName(country.name.common);
                         }}
@@ -211,16 +220,22 @@ function CountryList({
                             alt={`${country.name.common}'s flag`}
                           />
                         </figure>
-                        <div className="pl-5 pt-3">
+                        <div className={`pl-5 pt-3`}>
                           <h2 className="text-xl font-bold pb-3 ">
                             {country.name.common}
                           </h2>
                           <p>
-                            Population:{" "}
+                            <span className="font-semibold">Population</span>:{" "}
                             {country.population.toLocaleString("en-US")}
                           </p>
-                          <p>Region: {country.continents}</p>
-                          <p>Capital: {country.capital}</p>
+                          <p>
+                            <span className="font-semibold">Region</span>:{" "}
+                            {country.continents}
+                          </p>
+                          <p>
+                            <span className="font-semibold">Capital</span>:{" "}
+                            {country.capital}
+                          </p>
                         </div>
                       </div>
                     </Link>
@@ -228,11 +243,12 @@ function CountryList({
                 })
               : filterByRegion.map((country, i) => {
                   return (
-                    <Link to={`/country/${i}`}>
+                    <Link key={uuidv4()} to={`/country/${i}`}>
                       {" "}
                       <div
-                        key={i}
-                        className="card rounded-xl overflow-hidden w-[300px] h-[380px] bg-white shadow-xl mx-auto"
+                        className={`card rounded-xl overflow-hidden w-[300px] h-[380px] shadow-xl mx-auto ${
+                          isLightTheme ? "lightels" : "darkels"
+                        }`}
                         onClick={() => {
                           setGetCountryName(country.name.common);
                         }}
@@ -244,16 +260,22 @@ function CountryList({
                             alt={`${country.name.common}'s flag`}
                           />
                         </figure>
-                        <div className="pl-5 pt-3">
+                        <div className={`pl-5 pt-3`}>
                           <h2 className="text-xl font-bold pb-3 ">
                             {country.name.common}
                           </h2>
                           <p>
-                            Population:{" "}
+                            <span className="font-semibold">Population</span>:{" "}
                             {country.population.toLocaleString("en-US")}
                           </p>
-                          <p>Region: {country.continents}</p>
-                          <p>Capital: {country.capital}</p>
+                          <p>
+                            <span className="font-semibold">Region</span>:{" "}
+                            {country.continents}
+                          </p>
+                          <p>
+                            <span className="font-semibold">Capital</span>:{" "}
+                            {country.capital}
+                          </p>
                         </div>
                       </div>
                     </Link>

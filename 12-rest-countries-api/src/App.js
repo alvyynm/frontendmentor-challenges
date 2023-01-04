@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import CountryInfo from "./components/CountryInfo";
 import CountryList from "./components/CountryList";
+import Navbar from "./components/Navbar";
+import { ThemeContextProvider } from "./contexts/DarkModeContext";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -17,26 +19,32 @@ function App() {
         <Route
           path="/"
           element={
-            <CountryList
-              countries={countries}
-              setCountries={setCountries}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              setGetCountryName={setGetCountryName}
-            />
+            <ThemeContextProvider>
+              <Navbar />
+              <CountryList
+                countries={countries}
+                setCountries={setCountries}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                setGetCountryName={setGetCountryName}
+              />
+            </ThemeContextProvider>
           }
         />
         <Route
           path="/country/:countryId"
           element={
-            <CountryInfo
-              countryName={getCountryName}
-              setCountries={setCountries}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              getCountryName={getCountryName}
-              setGetCountryName={setGetCountryName}
-            />
+            <ThemeContextProvider>
+              <Navbar />
+              <CountryInfo
+                countryName={getCountryName}
+                setCountries={setCountries}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                getCountryName={getCountryName}
+                setGetCountryName={setGetCountryName}
+              />
+            </ThemeContextProvider>
           }
         />
       </Routes>
