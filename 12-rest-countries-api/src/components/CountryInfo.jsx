@@ -37,6 +37,9 @@ export default function CountryInfo({ countryName }) {
     return <div className="font-primary">Loading data...</div>;
   }
 
+  // Stores currency array for countries
+  const currencies = Object.values(countryDetails?.currencies);
+
   return (
     <div className={`h-[130vh] lg:h-[91vh] ${isLightTheme ? "light" : "dark"}`}>
       <div
@@ -104,6 +107,7 @@ export default function CountryInfo({ countryName }) {
                 </p>
                 <p>
                   <span className="font-semibold">Currencies: </span>
+                  {currencies.map((value) => value.name).join(" , ")}
                 </p>
                 <p>
                   <span className="font-semibold">Languages: </span>
