@@ -114,7 +114,7 @@ export default function CountryInfo({ countryName }) {
             <div className="mt-12">
               <p>
                 <span className="font-semibold mr-4">Border Countries: </span>
-                {countryDetails.borders.map((item) => {
+                {countryDetails.borders?.map((item) => {
                   return (
                     <button
                       key={uuidv4()}
