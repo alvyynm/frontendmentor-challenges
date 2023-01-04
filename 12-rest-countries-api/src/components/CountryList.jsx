@@ -45,7 +45,7 @@ function CountryList({
   const filterByRegion = countries.filter((country) => {
     return region.toLowerCase() === ""
       ? country
-      : country.continents.includes(region);
+      : country.region.includes(region);
   });
 
   return (
@@ -140,7 +140,7 @@ function CountryList({
                 <li>
                   <button
                     onClick={() => {
-                      setRegion("America");
+                      setRegion("Americas");
                       setSearchTerm("");
                     }}
                     //   href="#"
