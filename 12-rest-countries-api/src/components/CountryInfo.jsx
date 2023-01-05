@@ -125,19 +125,21 @@ export default function CountryInfo({ countryName }) {
             </div>
             <div className="mt-12">
               <p>
-                <span className="font-semibold mr-4">Border Countries: </span>
-                {countryDetails.borders?.map((item) => {
-                  return (
-                    <button
-                      key={uuidv4()}
-                      className={`text-white rounded-md shadow-md px-5 py-1 mr-2 mb-2 ${
-                        isLightTheme ? "lightels" : "darkels"
-                      }`}
-                    >
-                      {item}
-                    </button>
-                  );
-                })}
+                <span className="font-semibold mr-4">Border Countries:</span>
+                {countryDetails.borders === undefined
+                  ? "Island (no border countries)"
+                  : countryDetails.borders?.map((item) => {
+                      return (
+                        <button
+                          key={uuidv4()}
+                          className={`text-white rounded-md shadow-md px-5 py-1 mr-2 mb-2 ${
+                            isLightTheme ? "lightels" : "darkels"
+                          }`}
+                        >
+                          {item}
+                        </button>
+                      );
+                    })}
               </p>
             </div>
           </div>
