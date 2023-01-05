@@ -39,6 +39,7 @@ export default function CountryInfo({ countryName }) {
 
   // Stores currency array for countries
   const currencies = Object.values(countryDetails?.currencies);
+  console.log(currencies);
 
   // Store country lang(s) to display
   const languages = Object.values(countryDetails?.languages);
@@ -110,8 +111,8 @@ export default function CountryInfo({ countryName }) {
                 </p>
                 <p>
                   <span className="font-semibold">Currencies: </span>
-                  {currencies === "undefined"
-                    ? "Null"
+                  {currencies === undefined
+                    ? "Not provided"
                     : currencies.map((value) => value.name).join(" , ")}
                 </p>
                 <p>
