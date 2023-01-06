@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ThemeContext } from "../contexts/DarkModeContext";
 import { v4 as uuidv4 } from "uuid";
+import { Waveform } from "@uiball/loaders";
 
 import arrowBackLight from "../assets/arrow-back.svg";
 import arrowBackDark from "../assets/arrow-back-outline.svg";
@@ -43,7 +44,14 @@ export default function CountryInfo({ countryName }) {
           isLightTheme ? "lightels" : "darkels"
         }`}
       >
-        Loading data...
+        <div className="flex flex-col content-center h-full place-content-center w-11/12 mx-auto">
+          <div className="mx-auto">
+            <Waveform color={`${isLightTheme ? "black" : "white"}`} />
+          </div>
+          <p className="text-xl font-semibold text-center mt-5">
+            Loading data...
+          </p>
+        </div>
       </div>
     );
   }
