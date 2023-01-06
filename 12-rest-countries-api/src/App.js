@@ -10,7 +10,6 @@ import { ThemeContextProvider } from "./contexts/DarkModeContext";
 function App() {
   const [countries, setCountries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [error, setError] = useState(null);
   const [getCountryName, setGetCountryName] = useState("");
 
   return (
