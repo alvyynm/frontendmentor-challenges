@@ -10,7 +10,6 @@ import arrowBackDark from "../assets/arrow-back-outline.svg";
 export default function CountryInfo({ countryName }) {
   const [countryDetails, setCountryDetails] = useState([]);
   const { isLightTheme } = useContext(ThemeContext);
-  const [countryData, setCountryData] = useState("");
   const [countryCode, setCountryCode] = useState("");
 
   // Request country specific info when user clicks on a country
@@ -43,7 +42,6 @@ export default function CountryInfo({ countryName }) {
 
   // Stores currency array for countries
   const currencies = Object.values(countryDetails?.currencies);
-  console.log(currencies);
 
   // Store country lang(s) to display
   const languages = Object.values(countryDetails?.languages);

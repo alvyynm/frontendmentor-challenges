@@ -13,14 +13,13 @@ function CountryList({
 }) {
   const [error, setError] = useState(null);
   const [region, setRegion] = useState("");
-  const { isLightTheme, toggleTheme } = useContext(ThemeContext);
+  const { isLightTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     axios
       .get("https://restcountries.com/v3.1/all")
       .then((response) => {
         setCountries(response.data);
-        // console.log(countries);
       })
       .catch((error) => {
         console.log(error.message);
@@ -35,7 +34,6 @@ function CountryList({
 
   // Filter results based on user input
   const filterByCountry = countries.filter((country) => {
-    // console.log(country);
     return searchTerm.toLowerCase() === ""
       ? country
       : country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
