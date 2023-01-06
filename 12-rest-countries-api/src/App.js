@@ -5,6 +5,7 @@ import "./App.css";
 import CountryInfo from "./components/CountryInfo";
 import CountryList from "./components/CountryList";
 import Navbar from "./components/Navbar";
+import Error from "./components/Error";
 import { ThemeContextProvider } from "./contexts/DarkModeContext";
 
 function App() {
@@ -43,6 +44,15 @@ function App() {
                 getCountryName={getCountryName}
                 setGetCountryName={setGetCountryName}
               />
+            </ThemeContextProvider>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <ThemeContextProvider>
+              <Navbar />
+              <Error />
             </ThemeContextProvider>
           }
         />
