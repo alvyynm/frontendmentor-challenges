@@ -37,7 +37,15 @@ export default function CountryInfo({ countryName }) {
   }, [countryCode]);
 
   if (countryDetails.length === 0) {
-    return <div className="font-primary">Loading data...</div>;
+    return (
+      <div
+        className={`font-primary h-[90vh] max-w-[1450px] mx-auto ${
+          isLightTheme ? "lightels" : "darkels"
+        }`}
+      >
+        Loading data...
+      </div>
+    );
   }
 
   // Stores currency array for countries
