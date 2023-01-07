@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { ThemeContext } from "../contexts/DarkModeContext";
+import { Waveform } from "@uiball/loaders";
 import errorimage from "../assets/undraw_feeling_blue.svg";
 import uparrow from "../assets/up-arrow-svgrepo-com.svg";
 
@@ -59,6 +60,27 @@ function CountryList({
 
   if (backToTopButton) {
     backToTopButton.addEventListener("click", goToTop);
+  }
+
+  // Loading page
+  if (countries.length === 0) {
+    return (
+      <div
+        className={`font-primary h-[100vh] max-w-[1450px] mx-auto ${
+          isLightTheme ? "lightels" : "darkels"
+        }`}
+      >
+        <Navbar />
+        <div className="flex flex-col place-content-center w-11/12 mx-auto">
+          <div className="mx-auto mt-[25%]">
+            <Waveform color={`${isLightTheme ? "black" : "white"}`} />
+          </div>
+          <p className="text-xl font-semibold text-center mt-5">
+            Sit tight, we're loading data...
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (
