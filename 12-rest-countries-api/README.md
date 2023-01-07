@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - [GitHub](https://github.com/alvyynm/frontendmentor-challenges/tree/main/12-rest-countries-api)
-- [Live site](https://63b949317d37b47862dc4f1b--comforting-sunflower-2202ca.netlify.app/)
+- [Live site](https://comforting-sunflower-2202ca.netlify.app/)
 
 ## My process
 
