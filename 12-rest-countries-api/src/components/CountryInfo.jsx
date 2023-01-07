@@ -41,7 +41,7 @@ export default function CountryInfo({ countryName }) {
   if (countryDetails.length === 0) {
     return (
       <div
-        className={`font-primary h-[90vh] max-w-[1450px] mx-auto ${
+        className={`font-primary h-[100vh] max-w-[1450px] mx-auto ${
           isLightTheme ? "lightels" : "darkels"
         }`}
       >
@@ -65,7 +65,9 @@ export default function CountryInfo({ countryName }) {
   const languages = Object.values(countryDetails?.languages);
 
   return (
-    <div className={`h-[130vh] lg:h-[91vh] ${isLightTheme ? "light" : "dark"}`}>
+    <div
+      className={`h-[130vh] lg:h-[100vh] ${isLightTheme ? "light" : "dark"}`}
+    >
       <Navbar />
       <div
         className={`w-11/12 mx-auto font-primary py-6 ${
