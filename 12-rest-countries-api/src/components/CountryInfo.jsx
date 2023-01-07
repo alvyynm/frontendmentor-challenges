@@ -8,11 +8,13 @@ import Navbar from "./Navbar";
 
 import arrowBackLight from "../assets/arrow-back.svg";
 import arrowBackDark from "../assets/arrow-back-outline.svg";
+import errorimage from "../assets/undraw_feeling_blue.svg";
 
 export default function CountryInfo({ countryName }) {
   const [countryDetails, setCountryDetails] = useState([]);
   const { isLightTheme } = useContext(ThemeContext);
   const [countryCode, setCountryCode] = useState("");
+  const [apiError, setApiError] = useState(null);
 
   // Request country specific info when user clicks on a country
 
@@ -22,7 +24,10 @@ export default function CountryInfo({ countryName }) {
       .then((response) => {
         setCountryDetails(response.data[0]);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setApiError(error);
+      });
   }, []);
 
   // updates countryDetails when user clicks on a border country
@@ -34,7 +39,10 @@ export default function CountryInfo({ countryName }) {
         .then((response) => {
           setCountryDetails(response.data[0]);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          setApiError(error);
+        });
     }
   }, [countryCode]);
 
@@ -67,109 +75,131 @@ export default function CountryInfo({ countryName }) {
   return (
     <div className={`lg:h-[100vh] ${isLightTheme ? "light" : "dark"}`}>
       <Navbar />
-      <div
-        className={`w-11/12 mx-auto font-primary py-6 ${
-          isLightTheme ? "light" : "dark"
-        }`}
-      >
-        <div>
-          <button
-            className={`flex items-center justify-between w-[140px] px-7 py-1 rounded-md shadow-lg mt-10 mb-14 ${
-              isLightTheme ? "lightels" : "darkels"
-            }`}
-          >
-            {" "}
+      {apiError ? (
+        <div
+          className={`h-[90vh] flex w-11/12 mx-auto pt-6 ${
+            isLightTheme ? "light" : "dark"
+          }`}
+        >
+          <div className="flex flex-col content-center h-full place-content-center w-11/12 mx-auto">
             <img
-              className="w-8"
-              src={isLightTheme ? arrowBackLight : arrowBackDark}
-              alt="back arrow icon"
+              className="w-[90%] md:w-[700px] mx-auto"
+              src={errorimage}
+              alt="feeling blue illustration"
             />
-            <Link to="/" className="text-lg">
-              Back
-            </Link>
-          </button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div>
-            <img
-              className="h-full w-[500px]"
-              src={countryDetails.flags.png}
-              alt={`${countryDetails.name.common}'s official flag`}
-            />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold my-4">
-              {countryDetails.name.common}
+            <h2 className="text-3xl md:text-4xl font-bold text-center mt-5">
+              Oops!! Something went wrong
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="grid grid-cols-1 gap-3">
-                <h2>
-                  <span className="font-semibold">Native name: </span>{" "}
-                  {countryDetails.name.common}
-                </h2>
-                <p>
-                  {" "}
-                  <span className="font-semibold">Population: </span>{" "}
-                  {countryDetails.population.toLocaleString("en-US")}
-                </p>
-                <p>
-                  <span className="font-semibold">Region: </span>{" "}
-                  {countryDetails.region}
-                </p>
-                <p>
-                  <span className="font-semibold">Sub Region: </span>
-                  {countryDetails.subregion}
-                </p>
-                <p className="mb-3 md:mb-0">
-                  <span className="font-semibold">Capital: </span>{" "}
-                  {countryDetails.capital}
-                </p>
-              </div>
-              <div className="grid grid-cols-1 gap-3">
-                <p>
-                  <span className="font-semibold">Top Level Domain: </span>
-                  {countryDetails.tld}
-                </p>
-                <p>
-                  <span className="font-semibold">Currencies: </span>
-                  {currencies === undefined
-                    ? "Not provided"
-                    : currencies.map((value) => value.name).join(" , ")}
-                </p>
-                <p>
-                  <span className="font-semibold">Languages: </span>
-                  {}
-                  {languages === "undefined"
-                    ? "Not provided"
-                    : languages.map((value) => value).join(" , ")}
-                </p>
-              </div>
+            <p className="text-md md:text-xl font-semibold text-center my-5">
+              It appears there's was an issue while loading your request.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`w-11/12 mx-auto font-primary py-6 ${
+            isLightTheme ? "light" : "dark"
+          }`}
+        >
+          <div>
+            <button
+              className={`flex items-center justify-between w-[140px] px-7 py-1 rounded-md shadow-lg mt-10 mb-14 ${
+                isLightTheme ? "lightels" : "darkels"
+              }`}
+            >
+              {" "}
+              <img
+                className="w-8"
+                src={isLightTheme ? arrowBackLight : arrowBackDark}
+                alt="back arrow icon"
+              />
+              <Link to="/" className="text-lg">
+                Back
+              </Link>
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <img
+                className="h-full w-[500px]"
+                src={countryDetails.flags.png}
+                alt={`${countryDetails.name.common}'s official flag`}
+              />
             </div>
-            <div className="mt-12">
-              <p>
-                <span className="font-semibold mr-4">Border Countries:</span>
-                {countryDetails.borders === undefined
-                  ? "Island (no border countries)"
-                  : countryDetails.borders?.map((item, i) => {
-                      return (
-                        <button
-                          key={uuidv4()}
-                          className={`text-white rounded-md shadow-md px-5 py-1 mr-2 mb-2 ${
-                            isLightTheme ? "lightels" : "darkels"
-                          }`}
-                          onClick={() => {
-                            setCountryCode(item);
-                          }}
-                        >
-                          <Link to={`/country/${i}`}>{item}</Link>
-                        </button>
-                      );
-                    })}
-              </p>
+            <div>
+              <h2 className="text-2xl font-bold my-4">
+                {countryDetails.name.common}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 gap-3">
+                  <h2>
+                    <span className="font-semibold">Native name: </span>{" "}
+                    {countryDetails.name.common}
+                  </h2>
+                  <p>
+                    {" "}
+                    <span className="font-semibold">Population: </span>{" "}
+                    {countryDetails.population.toLocaleString("en-US")}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Region: </span>{" "}
+                    {countryDetails.region}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Sub Region: </span>
+                    {countryDetails.subregion}
+                  </p>
+                  <p className="mb-3 md:mb-0">
+                    <span className="font-semibold">Capital: </span>{" "}
+                    {countryDetails.capital}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 gap-3">
+                  <p>
+                    <span className="font-semibold">Top Level Domain: </span>
+                    {countryDetails.tld}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Currencies: </span>
+                    {currencies === undefined
+                      ? "Not provided"
+                      : currencies.map((value) => value.name).join(" , ")}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Languages: </span>
+                    {}
+                    {languages === "undefined"
+                      ? "Not provided"
+                      : languages.map((value) => value).join(" , ")}
+                  </p>
+                </div>
+              </div>
+              <div className="mt-12">
+                <p>
+                  <span className="font-semibold mr-4">Border Countries:</span>
+                  {countryDetails.borders === undefined
+                    ? "Island (no border countries)"
+                    : countryDetails.borders?.map((item, i) => {
+                        return (
+                          <button
+                            key={uuidv4()}
+                            className={`text-white rounded-md shadow-md px-5 py-1 mr-2 mb-2 ${
+                              isLightTheme ? "lightels" : "darkels"
+                            }`}
+                            onClick={() => {
+                              setCountryCode(item);
+                            }}
+                          >
+                            <Link to={`/country/${i}`}>{item}</Link>
+                          </button>
+                        );
+                      })}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
