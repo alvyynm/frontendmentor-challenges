@@ -56,7 +56,7 @@ function CountryList({
     >
       <Navbar />
       <div className={`py-6 ${isLightTheme ? "light" : "dark"}`}>
-        <ul className="flex flex-col gap-5 md:flex-row justify-between w-11/12 mx-auto">
+        <ul className="flex flex-col gap-5 md:flex-row justify-between w-11/12 mx-auto sticky top-[100px]">
           <li className="w-full lg:w-[30rem]">
             <form onSubmit={handleSubmit} className="flex items-center ">
               <label htmlFor="simple-search" className="sr-only">

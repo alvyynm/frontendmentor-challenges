@@ -8,7 +8,7 @@ function Navbar() {
   const { isLightTheme, toggleTheme } = useContext(ThemeContext);
   return (
     <div
-      className={`font-primary max-w-[1450px] mx-auto ${
+      className={`font-primary max-w-[1450px] mx-auto sticky top-0 ${
         isLightTheme ? "lightels" : "darkels"
       }`}
     >
