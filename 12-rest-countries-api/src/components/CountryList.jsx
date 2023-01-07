@@ -3,6 +3,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../contexts/DarkModeContext";
+import errorimage from "../assets/undraw_feeling_blue.svg";
 
 function CountryList({
   countries,
@@ -194,7 +195,19 @@ function CountryList({
               isLightTheme ? "light" : "dark"
             }`}
           >
-            There's was an issue while loading your request
+            <div className="flex flex-col content-center h-full place-content-center w-11/12 mx-auto">
+              <img
+                className="w-[90%] md:w-[700px] mx-auto"
+                src={errorimage}
+                alt="feeling blue illustration"
+              />
+              <h2 className="text-3xl md:text-4xl font-bold text-center mt-5">
+                Oops!! Something went wrong
+              </h2>
+              <p className="text-md md:text-xl font-semibold text-center my-5">
+                It appears there's was an issue while loading your request.
+              </p>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 auto-rows-auto gap-5 md:grid-cols-2 lg:grid-cols-4 md:gap-x-6 md:gap-y-8 w-11/12 mx-auto pt-6">
