@@ -58,7 +58,9 @@ function CountryList({
     });
   };
 
-  backToTopButton.addEventListener("click", goToTop);
+  if (backToTopButton) {
+    backToTopButton.addEventListener("click", goToTop);
+  }
 
   return (
     <div
