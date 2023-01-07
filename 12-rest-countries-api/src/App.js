@@ -20,7 +20,6 @@ function App() {
           path="/"
           element={
             <ThemeContextProvider>
-              <Navbar />
               <CountryList
                 countries={countries}
                 setCountries={setCountries}
@@ -35,7 +34,6 @@ function App() {
           path="/country/:countryId"
           element={
             <ThemeContextProvider>
-              <Navbar />
               <CountryInfo
                 countryName={getCountryName}
                 setCountries={setCountries}

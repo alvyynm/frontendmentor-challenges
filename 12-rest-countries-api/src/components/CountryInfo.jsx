@@ -4,6 +4,7 @@ import axios from "axios";
 import { ThemeContext } from "../contexts/DarkModeContext";
 import { v4 as uuidv4 } from "uuid";
 import { Waveform } from "@uiball/loaders";
+import Navbar from "./Navbar";
 
 import arrowBackLight from "../assets/arrow-back.svg";
 import arrowBackDark from "../assets/arrow-back-outline.svg";
@@ -44,6 +45,7 @@ export default function CountryInfo({ countryName }) {
           isLightTheme ? "lightels" : "darkels"
         }`}
       >
+        <Navbar />
         <div className="flex flex-col content-center h-full place-content-center w-11/12 mx-auto">
           <div className="mx-auto">
             <Waveform color={`${isLightTheme ? "black" : "white"}`} />
@@ -64,6 +66,7 @@ export default function CountryInfo({ countryName }) {
 
   return (
     <div className={`h-[130vh] lg:h-[91vh] ${isLightTheme ? "light" : "dark"}`}>
+      <Navbar />
       <div
         className={`w-11/12 mx-auto font-primary py-6 ${
           isLightTheme ? "light" : "dark"

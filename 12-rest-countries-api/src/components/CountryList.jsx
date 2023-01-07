@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 import { ThemeContext } from "../contexts/DarkModeContext";
 import errorimage from "../assets/undraw_feeling_blue.svg";
 
@@ -53,6 +54,7 @@ function CountryList({
         isLightTheme ? "lightels" : "darkels"
       }`}
     >
+      <Navbar />
       <div className={`py-6 ${isLightTheme ? "light" : "dark"}`}>
         <ul className="flex flex-col gap-5 md:flex-row justify-between w-11/12 mx-auto">
           <li className="w-full lg:w-[30rem]">
