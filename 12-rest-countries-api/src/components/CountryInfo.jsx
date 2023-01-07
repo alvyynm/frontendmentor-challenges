@@ -46,8 +46,8 @@ export default function CountryInfo({ countryName }) {
         }`}
       >
         <Navbar />
-        <div className="flex flex-col content-center h-full place-content-center w-11/12 mx-auto">
-          <div className="mx-auto">
+        <div className="flex flex-col place-content-center w-11/12 mx-auto">
+          <div className="mx-auto mt-[50%]">
             <Waveform color={`${isLightTheme ? "black" : "white"}`} />
           </div>
           <p className="text-xl font-semibold text-center mt-5">
@@ -65,9 +65,7 @@ export default function CountryInfo({ countryName }) {
   const languages = Object.values(countryDetails?.languages);
 
   return (
-    <div
-      className={`h-[130vh] lg:h-[100vh] ${isLightTheme ? "light" : "dark"}`}
-    >
+    <div className={`lg:h-[100vh] ${isLightTheme ? "light" : "dark"}`}>
       <Navbar />
       <div
         className={`w-11/12 mx-auto font-primary py-6 ${
