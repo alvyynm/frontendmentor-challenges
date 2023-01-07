@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { ThemeContext } from "../contexts/DarkModeContext";
 import errorimage from "../assets/undraw_feeling_blue.svg";
+import uparrow from "../assets/up-arrow-svgrepo-com.svg";
 
 function CountryList({
   countries,
@@ -48,9 +49,20 @@ function CountryList({
       : country.region.includes(region);
   });
 
+  // scroll to top button
+  const backToTopButton = document.querySelector(".back-to-top");
+
+  const goToTop = () => {
+    document.body.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  backToTopButton.addEventListener("click", goToTop);
+
   return (
     <div
-      className={`font-primary max-w-[1450px] mx-auto ${
+      className={`font-primary max-w-[1450px] mx-auto relative ${
         isLightTheme ? "lightels" : "darkels"
       }`}
     >
@@ -297,6 +309,14 @@ function CountryList({
           </div>
         )}
       </div>
+      <button className="back-to-top fixed bottom-5 right-[5%] md:right-[3%]">
+        <img className="w-8" src={uparrow} alt="back arrow icon" />
+        {/* <img
+          className="w-8"
+          src={isLightTheme ? arrowBackLight : arrowBackDark}
+          alt="back arrow icon"
+        /> */}
+      </button>
     </div>
   );
 }
