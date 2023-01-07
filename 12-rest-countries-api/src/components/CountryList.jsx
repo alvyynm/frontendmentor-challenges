@@ -25,7 +25,6 @@ function CountryList({
         setCountries(response.data);
       })
       .catch((error) => {
-        console.log(error.message);
         setError(error);
       });
   }, []);
@@ -313,11 +312,6 @@ function CountryList({
       </div>
       <button className="back-to-top fixed bottom-5 right-[5%] md:right-[3%]">
         <img className="w-8" src={uparrow} alt="back arrow icon" />
-        {/* <img
-          className="w-8"
-          src={isLightTheme ? arrowBackLight : arrowBackDark}
-          alt="back arrow icon"
-        /> */}
       </button>
     </div>
   );

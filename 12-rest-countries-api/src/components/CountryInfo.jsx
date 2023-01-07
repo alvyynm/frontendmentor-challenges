@@ -25,7 +25,6 @@ export default function CountryInfo({ countryName }) {
         setCountryDetails(response.data[0]);
       })
       .catch((error) => {
-        console.log(error);
         setApiError(error);
       });
   }, []);
@@ -40,7 +39,6 @@ export default function CountryInfo({ countryName }) {
           setCountryDetails(response.data[0]);
         })
         .catch((error) => {
-          console.log(error);
           setApiError(error);
         });
     }
