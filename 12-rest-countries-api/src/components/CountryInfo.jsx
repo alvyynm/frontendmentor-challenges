@@ -53,7 +53,7 @@ export default function CountryInfo({ countryName }) {
       >
         <Navbar />
         <div className="flex flex-col place-content-center w-11/12 mx-auto">
-          <div className="mx-auto mt-[50%]">
+          <div className="mx-auto mt-[25%]">
             <Waveform color={`${isLightTheme ? "black" : "white"}`} />
           </div>
           <p className="text-xl font-semibold text-center mt-5">
